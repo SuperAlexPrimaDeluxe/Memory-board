@@ -1,3 +1,25 @@
+// CODE POUR MON TIMER 
+function winRel(){
+location.reload();
+}
+let count = 15;
+const lebtn = document.querySelector(".btn--restart");
+const interval = setInterval(function(){
+  document.querySelector(".count").innerHTML=count;
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    document.querySelector(".count").innerHTML='Done';
+    lebtn.style.display = "block";
+    lebtn.addEventListener("click", winRel);
+    // or...
+    alert("Gameover");
+  }
+}, 1000);
+
+//CODE POUR LE RETOURNEMENT DE MES CARTES
+
+
 const symbols = ["🍧", "🥨", "🍗", "☕", "🥪", "🍌", "🍔", "🍕"];
 
 const doubleSymb = symbols.concat(symbols);
@@ -55,6 +77,8 @@ function reveal(){
   this.classList.add("reveal");
 }
 
-document.querySelectorAll(".target").forEach(function(element2){
+document.querySelectorAll(".target"
+
+).forEach(function(element2){
   element2.addEventListener("click", reveal);
 });

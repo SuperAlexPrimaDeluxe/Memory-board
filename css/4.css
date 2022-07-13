@@ -59,3 +59,7 @@ main {
 .target.reveal {
   transform: rotateY(-180deg);
 }
+
+.btn--restart{
+  display: none;
+}
