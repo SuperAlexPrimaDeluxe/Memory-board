@@ -1,5 +1,8 @@
 const symbols = ["🍧", "🥨", "🍗", "☕", "🥪", "🍌", "🍔", "🍕"];
 
+const doubleSymb = symbols.concat(symbols);
+console.log("ICI CONCAT :")
+console.log(doubleSymb);
 // foreach
 
 console.log("STEP01 - Pour chaque élément du tableau j'affiche un hello avec foreach");
@@ -38,7 +41,7 @@ allCards.innerHTML = "";
    //04 - J'ajoue à la suite de mon allcard les éléments
 
 function repartition() {
-  symbols.forEach(function (element, indice) {
+  doubleSymb.forEach(function (element, indice) {
     const targeter = document.createElement("div");
     targeter.innerHTML = "<div class='target'>"+
     "<div class='target_content'>" + element + "</div>" + "</div>";
@@ -47,3 +50,11 @@ function repartition() {
 }
 
 repartition();
+
+function reveal(){
+  this.classList.add("reveal");
+}
+
+document.querySelectorAll(".target").forEach(function(element2){
+  element2.addEventListener("click", reveal);
+});

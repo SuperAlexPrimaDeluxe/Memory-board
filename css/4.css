@@ -41,7 +41,7 @@ main {
   top: 0;
   bottom: 0;
   transform: rotateY(-180deg);
-  /*backface-visibility: hidden;*/
+  backface-visibility: hidden;
   background-color: white;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 0.3em;
@@ -56,6 +56,6 @@ main {
   background: transparent;
 }
 
-.target.descubierta {
+.target.reveal {
   transform: rotateY(-180deg);
 }
