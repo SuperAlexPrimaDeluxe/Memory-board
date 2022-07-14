@@ -1,4 +1,5 @@
 // CODE POUR MON TIMER 
+
 function winRel(){
 location.reload();
 }
@@ -54,6 +55,7 @@ console.log("OK");
 // 01 - Je vais chercher le conteneur global dans mon html et je rend le contenu vide 
 
 const allCards = document.querySelector(".view");
+const randomizedef = mathrr();
 allCards.innerHTML = "";
 
 // 02 - Je fais une fonctione dans laquelle je demande :
@@ -63,7 +65,7 @@ allCards.innerHTML = "";
    //04 - J'ajoue à la suite de mon allcard les éléments
 
 function repartition() {
-  doubleSymb.forEach(function (element, indice) {
+  randomizedef.forEach(function (element, indice) {
     const targeter = document.createElement("div");
     targeter.innerHTML = "<div class='target'>"+
     "<div class='target_content'>" + element + "</div>" + "</div>";
@@ -77,8 +79,42 @@ function reveal(){
   this.classList.add("reveal");
 }
 
-document.querySelectorAll(".target"
-
-).forEach(function(element2){
+document.querySelectorAll(".target").forEach(function(element2){
   element2.addEventListener("click", reveal);
 });
+
+///OBJET ET FONCTION D'OBJETS
+
+console.log("STEP04 - TEST DES OBJETS");
+
+const mikado = {
+  name : "mikado",
+  type : "cat",
+  age : 5,
+  bieneduque : false,
+  miaule: function() {
+    console.log("miaaaaou");
+  }
+};
+
+console.log(mikado);
+mikado.miaule();
+
+//MATH RANDOM
+
+function mathrr(){
+
+    let mixer;
+
+    //resultadooo = Math.floor(Math.random() * 100) + 1; // *10 pour passer à un nombre non décimmal math floor pour arrondir et le +1 pour commencer à un.
+
+    mixer = doubleSymb.sort(function() {
+    return 0.5 - Math.random(); 
+    });
+
+    //console.log("055555555555555");
+    //console.log(mixer);
+    return mixer;
+
+}
+
